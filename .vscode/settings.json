@@ -1,0 +1,23 @@
+{
+  "editor.formatOnSave": true,
+  "explorer.fileNesting.patterns": {
+    "*.astro": "${capture}.*",
+    "*.cjs": "${capture}.*",
+    "*.cts": "${capture}.*",
+    "*.css": "${capture}.*.css",
+    ".env": ".env.*",
+    "*.js": "${capture}.*",
+    "*.json": "${capture}.*",
+    "*.jsx": "${capture}.*",
+    "*.mdx": "${capture}.*",
+    "*.ts": "${capture}.*",
+    "*.tsx": "${capture}.*",
+    "tsconfig.json": "tsconfig.*.json",
+    "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb, bun.lock",
+    "vitest.config.ts": "vitest.workspace.ts",
+    "wrangler.jsonc": "*.dev.vars"
+  },
+  "search.exclude": {
+    "package-lock.json": true,
+  },
+}

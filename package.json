@@ -1,0 +1,62 @@
+{
+  "name": "webmoji",
+  "description": "A small emoji dataset for the web.",
+  "version": "1.0.0",
+  "homepage": "https://github.com/waynesbrain/webmoji",
+  "keywords": [
+    "emoji",
+    "emoticon"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/waynesbrain/webmoji"
+  },
+  "type": "module",
+  "exports": {
+    "./data": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/data.js"
+    },
+    "./data_all": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/data_all.js"
+    },
+    "./data_tags": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/data_tags.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite build --watch",
+    "build": "tsc -b && vite build && shx mv dist/data.d.ts dist/index.d.ts && shx rm dist/data*.d.ts",
+    "generate": "tsx ./scripts/generate.ts && prettier --write ./src/data*.ts",
+    "format": "prettier --write \"./{scripts,src}/**/*.{css,js,jsx,scss,ts,tsx}\"",
+    "lint": "eslint .",
+    "lint-ts": "tsc -b --noEmit --pretty",
+    "start": "vite build --watch"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.30.1",
+    "@types/node": "^22",
+    "emoji-datasource": "^7.0.2",
+    "emojibase-data": "^15",
+    "eslint": "^9.30.1",
+    "globals": "^16.3.0",
+    "json5": "^2.2.3",
+    "prettier": "^3.6.2",
+    "shx": "^0.4.0",
+    "tsx": "^4.20.6",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.38.0",
+    "vite": "^7.1.5",
+    "vite-plugin-dts": "^4.5.4"
+  },
+  "prettier": {
+    "trailingComma": "all",
+    "proseWrap": "always"
+  }
+}
