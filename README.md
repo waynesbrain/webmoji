@@ -61,3 +61,7 @@ type EmojiItem = {
 
 - Changed package exports to expose `./types`, removing duplicate type exports.
   - Actually export `EmojiItem` type instead of just using it.
+
+### v3.0.0
+
+- Fixed package exports to expose types where necessary.

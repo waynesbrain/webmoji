@@ -1,7 +1,7 @@
 {
   "name": "webmoji",
   "description": "A small emoji dataset for the web.",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "homepage": "https://github.com/waynesbrain/webmoji",
   "keywords": [
     "emoji",
@@ -15,12 +15,15 @@
   "type": "module",
   "exports": {
     "./data": {
+      "types": "./dist/types/data.d.ts",
       "import": "./dist/data.js"
     },
     "./data_all": {
+      "types": "./dist/types/data.d.ts",
       "import": "./dist/data_all.js"
     },
     "./data_tags": {
+      "types": "./dist/types/data.d.ts",
       "import": "./dist/data_tags.js"
     },
     "./types/*": {
