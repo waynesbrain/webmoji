@@ -1,7 +1,7 @@
 {
   "name": "webmoji",
   "description": "A small emoji dataset for the web.",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "homepage": "https://github.com/waynesbrain/webmoji",
   "keywords": [
     "emoji",
@@ -15,16 +15,16 @@
   "type": "module",
   "exports": {
     "./data": {
-      "types": "./dist/index.d.ts",
       "import": "./dist/data.js"
     },
     "./data_all": {
-      "types": "./dist/index.d.ts",
       "import": "./dist/data_all.js"
     },
     "./data_tags": {
-      "types": "./dist/index.d.ts",
       "import": "./dist/data_tags.js"
+    },
+    "./types/*": {
+      "types": "./dist/types/*.d.ts"
     }
   },
   "files": [
@@ -32,7 +32,8 @@
   ],
   "scripts": {
     "dev": "vite build --watch",
-    "build": "tsc -b && vite build && shx mv dist/data.d.ts dist/index.d.ts && shx rm dist/data*.d.ts",
+    "build": "tsc -b && vite build && npm run cleanup-types",
+    "cleanup-types": "shx mkdir dist/types && shx mv dist/data.d.ts dist/types/data.d.ts && shx rm dist/data*.d.ts",
     "generate": "tsx ./scripts/generate.ts && prettier --write ./src/data*.ts",
     "format": "prettier --write \"./{scripts,src}/**/*.{css,js,jsx,scss,ts,tsx}\"",
     "lint": "eslint .",

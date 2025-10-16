@@ -16,6 +16,7 @@ Maintained to be compatible with a custom, forked version of
 | `.`           | 162.43 kB | 25.37 kB | `default` export, minimal data.     |
 | `./data_tags` | 195.80 kB | 34.21 kB | With searchable `tags`.             |
 | `./data_all`  | 216.11 kB | 35.99 kB | With `emoticons`, `tags`, `version` |
+| `./types`     | 0 kB      | 0 kB     | Just types.                         |
 
 ## Types
 
@@ -55,3 +56,8 @@ type EmojiItem = {
 - Reorganized code to separate `scripts` from `src`.
 - Modify `scripts/generate.ts` and `EmojiItem` type to produce smaller data.
 - Added options to `scripts/generate.ts` to generate multiple files.
+
+### v2.0.0
+
+- Changed package exports to expose `./types`, removing duplicate type exports.
+  - Actually export `EmojiItem` type instead of just using it.
