@@ -2,6 +2,8 @@
 
 import type { EmojiItem } from "./types/emoji";
 
+export type { EmojiItem };
+
 export const emojis: EmojiItem[] = [
   {
     emoji: "😀",

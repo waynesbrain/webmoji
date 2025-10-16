@@ -152,6 +152,8 @@ function writeFile(out_file: OutFile = "data") {
 
 import type { EmojiItem } from "./types/emoji";
 
+export type { EmojiItem };
+
 export const emojis: EmojiItem[] = ${json5.stringify(emojis, { space: 2, quote: '"' })};
 
 export const gitHubCustomEmojis: EmojiItem[] = ${json5.stringify(gitHubCustomEmojis, { space: 2, quote: '"' })};
@@ -163,6 +165,8 @@ export const gitHubEmojis: EmojiItem[] = [...emojis, ...gitHubCustomEmojis];
   const content = `// This is a generated file
 
 import type { EmojiItem } from "./types/emoji";
+
+export type { EmojiItem };
 
 export const emojis: EmojiItem[] = ${json5.stringify(emojis, { space: 2, quote: '"' })};
 `;
