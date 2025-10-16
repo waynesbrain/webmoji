@@ -3,7 +3,9 @@
 A small set of emoji data for the web.
 
 Maintained to be compatible with a custom, forked version of
-`@tiptap/extension-emoji`, one which can use:
+`@tiptap/extension-emoji` (namely:
+[tiptap-webmoji](https://npmjs.com/package/tiptap-webmoji)) or any other
+implementation which can use:
 
 - an optional `tags` property on the exported `EmojiItem` type e.g.
   `tags?: string[]` instead of the original `tags: string[]`
